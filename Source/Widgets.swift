@@ -10,7 +10,7 @@ import UIKit
 import SafariServices
 import Foundation
 
-// MARK Protocol/WidgetRequest
+// MARK: Protocol/WidgetRequest
 
 protocol WidgetRequest {}
 extension WidgetRequest {
