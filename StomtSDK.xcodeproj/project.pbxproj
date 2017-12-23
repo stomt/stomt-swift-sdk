@@ -28,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C0EFD661FEEC21E00120E70 /* Usage.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Usage.md; sourceTree = "<group>"; };
 		2C9F57CB1FE9A58400372C1B /* STError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STError.swift; sourceTree = "<group>"; };
 		2C9F57E31FE9BD6000372C1B /* StomtWidgetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StomtWidgetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C9F57EB1FEA8BFE00372C1B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -77,9 +78,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C0EFD651FEEC20F00120E70 /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				2C0EFD661FEEC21E00120E70 /* Usage.md */,
+			);
+			path = Documentation;
+			sourceTree = "<group>";
+		};
 		2CAB194C1FE34FA20083F3B9 = {
 			isa = PBXGroup;
 			children = (
+				2C0EFD651FEEC20F00120E70 /* Documentation */,
 				2CAB19C91FE369910083F3B9 /* Source */,
 				2CAB19881FE3526E0083F3B9 /* Support Files */,
 				2CAB19931FE35F390083F3B9 /* StomtiOSTests */,
