@@ -12,12 +12,18 @@ They __do not__ require an Application ID and can be presented from any ViewCont
 
 ### Stomt Creation
 The STOMT creation Widget can be invoked like this:
-`Stomt.creationWidget(withTargetID: "stomt", fromViewController: self)`
+
+```swift
+Stomt.creationWidget(withTargetID: "stomt", fromViewController: self)
+```
 
 - __The targetID parameter is required__. If the target doesn't exist, the Widget will be presented in a inconsistent state.
 
 ### Feed Retrieval
 The feed retrieval Widget can be invoked like this:
-`Stomt.feedWidget(withTargetID: "stomt", fromViewController: self)`
+
+```swift
+Stomt.feedWidget(withTargetID: "stomt", fromViewController: self)
+```
 
 - __The targetID parameter is required__. If the target doesn't exist, the Widget will be presented in a inconsistent state.
