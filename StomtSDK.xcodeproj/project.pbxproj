@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2C9F57CC1FE9A58400372C1B /* STError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9F57CB1FE9A58400372C1B /* STError.swift */; };
+		2C9F57EC1FEA8BFE00372C1B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 2C9F57EB1FEA8BFE00372C1B /* README.md */; };
 		2CAB198A1FE35DE90083F3B9 /* StomtiOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CAB195B1FE34FB30083F3B9 /* StomtiOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2CAB198C1FE35E300083F3B9 /* Stomt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAB198B1FE35E300083F3B9 /* Stomt.swift */; };
 		2CAB19951FE35F390083F3B9 /* StomtiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAB19941FE35F390083F3B9 /* StomtiOSTests.swift */; };
@@ -29,6 +30,7 @@
 /* Begin PBXFileReference section */
 		2C9F57CB1FE9A58400372C1B /* STError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STError.swift; sourceTree = "<group>"; };
 		2C9F57E31FE9BD6000372C1B /* StomtWidgetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StomtWidgetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C9F57EB1FEA8BFE00372C1B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		2CAB195B1FE34FB30083F3B9 /* StomtiOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StomtiOS.h; sourceTree = "<group>"; };
 		2CAB195C1FE34FB30083F3B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CAB19681FE34FDD0083F3B9 /* StomtOSX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StomtOSX.h; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				2CAB19881FE3526E0083F3B9 /* Support Files */,
 				2CAB19931FE35F390083F3B9 /* StomtiOSTests */,
 				2CAB19591FE34FB30083F3B9 /* Products */,
+				2C9F57EB1FEA8BFE00372C1B /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -295,6 +298,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C9F57EC1FEA8BFE00372C1B /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
