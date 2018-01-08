@@ -1,6 +1,6 @@
 # Stomt Swift SDK
 
-![Stomt Logo](https://lh4.googleusercontent.com/3a2WHpedfLmXAiZDLfVzFzMKq_DtzP7wQFZhUygO4KCUBntHPbKmsnLLiAnIxDhAi43Ltk6wEWL2RNvTwFij=w2720-h1422-rw)
+![Stomt Logo](https://i.imgur.com/hlhvOCz.jpg)
 
 ![platforms-badge](https://img.shields.io/badge/platform-iOS-lightgray.svg)
 
@@ -29,7 +29,32 @@ If you prefer not to use dependency managers you can install the framework manua
 - Build the framework from the target drop-down.
 - Import following the instructions in the [Usage](https://github.com/stomt/stomt-swift-sdk/blob/master/Documentation/Usage.md) section.
 
+## Widgets
+A Widget consists of an instance of SFSafariViewController that gets presented by one of your ViewControllers.
+Widgets are the easiest way to incorporate *stomt creation and feed retrieval functionalities* in your app.
+They __do not__ require an Application ID and can be presented from any ViewController.
+
+### Stomt Creation
+The STOMT creation Widget can be invoked like this:
+
+```swift
+Stomt.creationWidget(withTargetID: "stomt", fromViewController: self)
+```
+
+- __The targetID parameter is required__. If the target doesn't exist, the Widget will be presented in a inconsistent state.
+
+### Feed Retrieval
+The feed retrieval Widget can be invoked like this:
+
+```swift
+Stomt.feedWidget(withTargetID: "stomt", fromViewController: self)
+```
+
+- __The targetID parameter is required__. If the target doesn't exist, the Widget will be presented in a inconsistent state.
+
 ## FAQ
 
+### Is there an example project?
+Definitely! You can find it in the "Examples" folder in the repo.
 
 
