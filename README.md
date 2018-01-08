@@ -27,7 +27,7 @@ If you prefer not to use dependency managers you can install the framework manua
 - Open the downloaded SDK folder and drag  `StomtSDK.xcodeproj` __inside and below__ your project icon in the Xcode navigator.
 - Click your project tab in the Xcode navigator and in `General`, scroll down and press `+` in `Embedded Binaries` to add `Stomt.framework` for the required platform.
 - Build the framework from the target drop-down.
-- Import following the instructions in the [Usage](https://github.com/stomt/stomt-swift-sdk/Documentation/Usage.md) section.
+- Import following the instructions in the [Usage](https://github.com/stomt/stomt-swift-sdk/blob/master/Documentation/Usage.md) section.
 
 ## FAQ
 
