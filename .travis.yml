@@ -1,0 +1,8 @@
+language: objective-c
+osx_image: xcode9.1
+env:
+- DESTINATION="platform=iOS Simulator,OS=11.1,name=iPhone 6s" SCHEME="StomtiOS" SDK=iphonesimulator
+
+script:
+- xcodebuild clean build -project StomtSDK.xcodeproj -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO test | xcpretty -c
+- xcodebuild test -project StomtSDK.xcodeproj -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO test | xcpretty -c
