@@ -3,6 +3,7 @@
 ![Stomt Logo](https://i.imgur.com/hlhvOCz.jpg)
 
 ![platforms-badge](https://img.shields.io/badge/platform-iOS-lightgray.svg)
+[![Build Status](https://travis-ci.com/stomt/stomt-swift-sdk.svg?token=AP9YnfxJakP4i3i8dAPT&branch=master)](https://travis-ci.com/stomt/stomt-swift-sdk)
 
 Our SDK provides you with the tools for an easy and transparent integration of STOMT in your apps.
 This repository provides you with a target for all the Apple devices we are currently supporting.
