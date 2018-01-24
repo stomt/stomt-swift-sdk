@@ -20,7 +20,7 @@ import Foundation
 
 // Check whether the current baseAPI is the testAPI
 var testServer = {return Shared.baseAPI == .testAPI}
-
+var appIDIsSet = {return Shared.appID != ""}
 // MARK: Public
 
 // Represents stomt's endpoints for REST communication
@@ -34,6 +34,7 @@ public enum StomtAPI: String, RawRepresentable {
 public struct Shared {
     // API server used throughout all network requests
     public static var baseAPI: StomtAPI = StomtAPI.productionAPI
+    public static var appID: String = ""
 }
 
 // MARK: Extension/URL - Parameter concatenation
@@ -68,50 +69,62 @@ extension URL: URLConvertible {
     }
 }
 
-// MARK: Public API - No AppID
+// MARK: Public API
+
+/**
+ Set an appID for REST communication with the stomt API server.
+ 
+ */
+public func setAppID(appID: String) {
+    guard appID != "" else {
+        print("[Stomt/Setup] No appID provided.")
+        return
+    }
+    Shared.appID = appID
+}
 
 /**
  Provides a widget for seamless stomt creation through SFSafariViewController.
  
- __If a non existing targetID is provided, a new target will be created.__
- 
  - Parameters:
-    - targetID: The target identifier/slug. Corresponds to the username of the desired page/user.
     - viewController: The view controller from which to present the new SFSafariViewController instance.
  
  */
-public func creationWidget(withTargetID targetID: String, fromViewController viewController: UIViewController) throws {
+public func creationWidget(fromViewController viewController: UIViewController) throws {
+    if !appIDIsSet() {
+        throw StomtError.AuthorizationError.AppIDNotSet(#function)
+    }
+    
     #if os(iOS)
         // Widget currently unavailable in test server
         if testServer() {
             throw StomtError.APIPortabilityError.MethodNotAvailableOnServer(#function, "testing")
         }
-        let creationWidget = Widget.StomtWidget(targetID: targetID)
+        let creationWidget = Widget.StomtWidget(appID:Shared.appID)
         creationWidget.display(withRequest: creationWidget, fromViewController: viewController)
     #elseif os(OSX)
         throw StomtError.PortabilityError.MethodNotAvailableOnOS(#function, "Mac OS")
     #endif
 }
 
-// MARK: Public API - No AppID
 /**
  Provides a widget for seamless feed retrieval through SFSafariViewController.
  
  - Parameters:
-    - targetID: The target identifier/slug. Corresponds to the username of the desired page/user.
     - viewController: The view controller from which to present the new SFSafariViewController instance.
  
- - Warning:
-    If the provided targetID does not exist, the API will respond with an inconsistent state creation form.
- 
  */
-public func feedWidget(withTargetID targetID: String, fromViewController viewController: UIViewController) throws {
+public func feedWidget(fromViewController viewController: UIViewController) throws {
+    if !appIDIsSet() {
+        throw StomtError.AuthorizationError.AppIDNotSet(#function)
+    }
+    
     #if os(iOS)
         // Widget currently unavailable in test server
         if testServer() {
             throw StomtError.APIPortabilityError.MethodNotAvailableOnServer(#function, "testing")
         }
-        let creationWidget = Widget.FeedWidget(targetID: targetID, displayCreation: true)
+        let creationWidget = Widget.FeedWidget(appID:Shared.appID, displayCreation: true)
         creationWidget.display(withRequest: creationWidget, fromViewController: viewController)
     #elseif os(OSX)
         throw StomtError.PortabilityError.MethodNotAvailableOnOS(#function, "Mac OS")

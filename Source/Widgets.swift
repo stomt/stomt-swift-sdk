@@ -37,16 +37,17 @@ extension WidgetRequest {
 
 enum Widget: URLConvertible, WidgetRequest {
     
-    case StomtWidget(targetID: String)
-    case FeedWidget(targetID: String, displayCreation: Bool)
+    case StomtWidget(appID: String)
+    case FeedWidget(appID: String, displayCreation: Bool)
     
     enum Keys {
+        
         enum StomtWidget: String, RawRepresentable {
-            case targetID = "targetId"
+            case appID = "appId"
         }
         
         enum FeedWidget: String, RawRepresentable {
-            case targetID = "targetId"
+            case appID = "appId"
             case displayCreation = "creation"
         }
     }
@@ -56,14 +57,13 @@ enum Widget: URLConvertible, WidgetRequest {
         var path: URL
         
         switch self {
-        case let .StomtWidget(targetID):
+        case .StomtWidget(let appID):
             path = try (basePath + "/widget").asURL()
-            path.concatenateParameters([Keys.StomtWidget.targetID.rawValue:targetID])
-            
-        case .FeedWidget(let targetID, let displayCreation):
+            path.concatenateParameters([Keys.StomtWidget.appID.rawValue:appID])
+        case .FeedWidget(let appID, let displayCreation):
             path = try (basePath + "/feedwidget").asURL()
-            path.concatenateParameters([Keys.FeedWidget.targetID.rawValue:targetID,
-                Keys.FeedWidget.displayCreation.rawValue:displayCreation.description])
+            path.concatenateParameters([Keys.StomtWidget.appID.rawValue:appID,
+                                        Keys.FeedWidget.displayCreation.rawValue:displayCreation.description])
         }
         
         return path

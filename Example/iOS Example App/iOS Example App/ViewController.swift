@@ -15,6 +15,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Set the stomt API mode - Default .testAPI
         Stomt.Shared.baseAPI = .productionAPI
+        Stomt.setAppID(appID: "vRrDkEdKQwpbBzcu6Bzt6BeZn")
         // ===================
     }
     
@@ -22,7 +23,7 @@ class ViewController: UIViewController {
         // Create a new stomt using the creation widget.
         // Call can throw - See Errors section in the README
         do {
-            try Stomt.creationWidget(withTargetID: "stomt", fromViewController: self)
+            try Stomt.creationWidget(fromViewController: self)
         } catch {
             print("\(error)")
         }
@@ -33,7 +34,7 @@ class ViewController: UIViewController {
         // Retrieve an existing feed using the feed widget.
         // Call can throw - See Errors section in the README
         do {
-            try Stomt.feedWidget(withTargetID: "stomt", fromViewController: self)
+            try Stomt.feedWidget(fromViewController: self)
         } catch {
             print("\(error)")
         }

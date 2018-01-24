@@ -9,6 +9,11 @@ import Foundation
 
 public enum StomtError {
     
+    // Errors deriving from the lack of authorization parameters
+    public enum AuthorizationError: Error {
+        case AppIDNotSet(String)
+    }
+    
     // Errors deriving from platform-specific implementations
     public enum PortabilityError: Error {
         case MethodNotAvailableOnOS(String, String)
@@ -58,6 +63,15 @@ extension JSONCodableError.DecodeError: LocalizedError {
             return "[JSONCodable/DecodeError] Key '\(key)' not found."
         case .TypeMismatch(let key):
             return "[JSONCodable/DecodeError] Value for '\(key)' has a mismatching type."
+        }
+    }
+}
+
+extension StomtError.AuthorizationError: LocalizedError {
+    public var errorDescription: String? {
+        switch self {
+        case .AppIDNotSet(let function):
+            return "[Stomt/Authorization] \(function) requires an appID obtainable from the 'apps' section of your page."
         }
     }
 }
