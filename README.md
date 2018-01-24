@@ -17,6 +17,16 @@ This repository provides you with a target for all the Apple devices we are curr
 - iOS 10+
 
 ## Installation
+
+### Carthage
+Carthage is "A simple, decentralized dependency manager for Cocoa"
+
+- Create a 'Cartfile' in your project root directory
+- Copy the following in the Cartfile:  `github "stomt/stomt-swift-sdk" ~> 0.1`
+- Run `carthage update` from the project root directory to fetch and build the SDK
+
+At this point Carthage will have built the SDK and produced the *.framework* file to include in your project. Due to the [App Store submission bug](http://www.openradar.me/radar?id=6409498411401216), you should follow the installation instructions available [in the Carthage repository](https://github.com/Carthage/Carthage#getting-started).
+
 ### Cocoapods
 Coming soon!
 
