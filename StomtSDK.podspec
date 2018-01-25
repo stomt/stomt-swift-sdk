@@ -8,6 +8,6 @@ Pod::Spec.new do |s|
   s.authors = { 'Leonardo Cascianelli' => 'h3xept@gmail.com' }
   s.source = { :git => 'https://github.com/stomt/stomt-swift-sdk.git', :tag => s.version }
 
-  s.ios.deployment_target = '10.1.1'
+  s.ios.deployment_target = '10.0'
   s.source_files = 'Source/*.swift'
 end

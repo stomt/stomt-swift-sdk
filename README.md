@@ -28,7 +28,19 @@ Carthage is "A simple, decentralized dependency manager for Cocoa"
 At this point Carthage will have built the SDK and produced the *.framework* file to include in your project. Due to the [App Store submission bug](http://www.openradar.me/radar?id=6409498411401216), you should follow the installation instructions available [in the Carthage repository](https://github.com/Carthage/Carthage#getting-started).
 
 ### Cocoapods
-Coming soon!
+You can install Cocoapods with the command:
+
+ ```shell
+ gem install cocoapods
+```
+To integrate the SDK using Cocoapods you have to create a   `Podfile` with the following content:
+
+```ruby
+platform :ios, '10.1.1'
+target '<Your Target Name>' do
+pod 'StomtSDK', '~> 0.1'
+end
+```
 
 ### Manually
 If you prefer not to use dependency managers you can install the framework manually.
