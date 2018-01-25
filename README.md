@@ -41,6 +41,10 @@ target '<Your Target Name>' do
 pod 'StomtSDK', '~> 0.1'
 end
 ```
+Finally, run
+```shell
+pod install
+```
 
 ### Manually
 If you prefer not to use dependency managers you can install the framework manually.
