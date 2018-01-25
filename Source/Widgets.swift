@@ -21,10 +21,9 @@ extension WidgetRequest {
     
     func display<Request: URLConvertible>(withRequest request: Request, fromViewController viewController: UIViewController) {
         
-        let safariConfiguration = SFSafariViewController.Configuration()
         do {
             let url = try request.asURL()
-            let safariViewController = SFSafariViewController(url: url, configuration: safariConfiguration)
+            let safariViewController = SFSafariViewController(url: url)
             viewController.present(safariViewController, animated: true, completion: nil)
         } catch {
             print("[Stomt/Display] \(error)")
