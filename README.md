@@ -36,7 +36,7 @@ You can install Cocoapods with the command:
 To integrate the SDK using Cocoapods you have to create a   `Podfile` with the following content:
 
 ```ruby
-platform :ios, '10.1.1'
+platform :ios, '10.0'
 target '<Your Target Name>' do
 pod 'StomtSDK', '~> 0.1'
 end
